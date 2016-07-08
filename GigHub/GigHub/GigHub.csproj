@@ -214,6 +214,14 @@
     <Compile Include="Migrations\201607082006578_PopulateGenresTable.Designer.cs">
       <DependentUpon>201607082006578_PopulateGenresTable.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201607082202070_AddForeignKeyPropertiesToGig.cs" />
+    <Compile Include="Migrations\201607082202070_AddForeignKeyPropertiesToGig.Designer.cs">
+      <DependentUpon>201607082202070_AddForeignKeyPropertiesToGig.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201607082207017_ChangedNameFromUserIdToArtistIdinGig.cs" />
+    <Compile Include="Migrations\201607082207017_ChangedNameFromUserIdToArtistIdinGig.Designer.cs">
+      <DependentUpon>201607082207017_ChangedNameFromUserIdToArtistIdinGig.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\ApplicationDbContext.cs" />
@@ -307,6 +315,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201607082006578_PopulateGenresTable.resx">
       <DependentUpon>201607082006578_PopulateGenresTable.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201607082202070_AddForeignKeyPropertiesToGig.resx">
+      <DependentUpon>201607082202070_AddForeignKeyPropertiesToGig.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201607082207017_ChangedNameFromUserIdToArtistIdinGig.resx">
+      <DependentUpon>201607082207017_ChangedNameFromUserIdToArtistIdinGig.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
