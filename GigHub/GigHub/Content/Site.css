@@ -155,3 +155,9 @@ h6,
 .gigs > li .details .genre {
     font-size: 15px;
 }
+
+.gigs >li .buttons {
+    top: 0px;
+    left: 250px;
+    position: absolute;
+}

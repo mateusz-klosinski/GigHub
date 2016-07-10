@@ -21,6 +21,7 @@ namespace GigHub.Controllers
             _context = new ApplicationDbContext();
         }
 
+        [HttpPost]
         public IHttpActionResult Follow(FollowsDto dto)
         {
             var artistId = _context.Users.Single(u => u.Name == dto.ArtistName).Id;

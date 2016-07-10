@@ -19,10 +19,14 @@
             <div class="details">
                 <span class="artist">
                     @gig.Artist.Name
+
                 </span>
                 <span class="genre">
                     @gig.Genre.Name
                 </span>
+            </div>
+            <div class="buttons">
+                <button data-artist-name="@gig.Artist.Name" class="btn btn-default btn-sm pull-right">Follow?</button>
                 <button data-gig-id="@gig.Id" class="btn btn-default btn-sm pull-right js-toggle-attendance">Going?</button>
             </div>
         </li>
