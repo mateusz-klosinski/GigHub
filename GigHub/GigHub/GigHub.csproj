@@ -259,6 +259,14 @@
     <Compile Include="Migrations\201607101141581_AddFollow.Designer.cs">
       <DependentUpon>201607101141581_AddFollow.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201607101245529_AddFollowersAndFolloweesToAppUser.cs" />
+    <Compile Include="Migrations\201607101245529_AddFollowersAndFolloweesToAppUser.Designer.cs">
+      <DependentUpon>201607101245529_AddFollowersAndFolloweesToAppUser.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201607101255234_ChangingOnCascadeDeleteInAppUser.cs" />
+    <Compile Include="Migrations\201607101255234_ChangingOnCascadeDeleteInAppUser.Designer.cs">
+      <DependentUpon>201607101255234_ChangingOnCascadeDeleteInAppUser.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\ApplicationDbContext.cs" />
     <Compile Include="Models\Attendance.cs" />
@@ -385,6 +393,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201607101141581_AddFollow.resx">
       <DependentUpon>201607101141581_AddFollow.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201607101245529_AddFollowersAndFolloweesToAppUser.resx">
+      <DependentUpon>201607101245529_AddFollowersAndFolloweesToAppUser.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201607101255234_ChangingOnCascadeDeleteInAppUser.resx">
+      <DependentUpon>201607101255234_ChangingOnCascadeDeleteInAppUser.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
