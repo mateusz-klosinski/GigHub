@@ -209,6 +209,7 @@
     <Compile Include="App_Start\Startup.Auth.cs" />
     <Compile Include="App_Start\WebApiConfig.cs" />
     <Compile Include="Controllers\AccountController.cs" />
+    <Compile Include="Controllers\API\GigsController.cs" />
     <Compile Include="Controllers\AttendancesController.cs" />
     <Compile Include="Controllers\FollowsController.cs" />
     <Compile Include="Controllers\GigsController.cs" />
@@ -263,9 +264,9 @@
     <Compile Include="Migrations\201607101245529_AddFollowersAndFolloweesToAppUser.Designer.cs">
       <DependentUpon>201607101245529_AddFollowersAndFolloweesToAppUser.cs</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201607101255234_ChangingOnCascadeDeleteInAppUser.cs" />
-    <Compile Include="Migrations\201607101255234_ChangingOnCascadeDeleteInAppUser.Designer.cs">
-      <DependentUpon>201607101255234_ChangingOnCascadeDeleteInAppUser.cs</DependentUpon>
+    <Compile Include="Migrations\201607171112346_AddIsCancelledToGig.cs" />
+    <Compile Include="Migrations\201607171112346_AddIsCancelledToGig.Designer.cs">
+      <DependentUpon>201607171112346_AddIsCancelledToGig.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\ApplicationDbContext.cs" />
@@ -400,8 +401,8 @@
     <EmbeddedResource Include="Migrations\201607101245529_AddFollowersAndFolloweesToAppUser.resx">
       <DependentUpon>201607101245529_AddFollowersAndFolloweesToAppUser.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201607101255234_ChangingOnCascadeDeleteInAppUser.resx">
-      <DependentUpon>201607101255234_ChangingOnCascadeDeleteInAppUser.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201607171112346_AddIsCancelledToGig.resx">
+      <DependentUpon>201607171112346_AddIsCancelledToGig.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
