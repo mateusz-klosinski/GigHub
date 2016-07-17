@@ -1,15 +1,10 @@
-﻿using System;
-using System.Collections.Generic;
 using System.Linq;
-using System.Net;
-using System.Net.Http;
 using System.Web.Http;
 using GigHub.Dtos;
-using GigHub.Migrations;
 using GigHub.Models;
 using Microsoft.AspNet.Identity;
 
-namespace GigHub.Controllers
+namespace GigHub.Controllers.API
 {
     [Authorize]
     public class FollowsController : ApiController
@@ -30,7 +25,7 @@ namespace GigHub.Controllers
 
             if (artistId == userId || _context.Follows.Any(f => f.ArtistId == artistId && f.FollowerId == userId))
             {
-                return BadRequest("Duplikat lub odwołanie do samego siebie.");
+                return BadRequest("Duplikat lub odwo�anie do samego siebie.");
             }
 
             var follow = new Follow()
