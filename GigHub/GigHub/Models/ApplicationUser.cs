@@ -1,12 +1,10 @@
-﻿using System.Collections;
+﻿using Microsoft.AspNet.Identity;
+using Microsoft.AspNet.Identity.EntityFramework;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.ComponentModel.DataAnnotations;
-using System.Data.Entity;
 using System.Security.Claims;
 using System.Threading.Tasks;
-using Microsoft.AspNet.Identity;
-using Microsoft.AspNet.Identity.EntityFramework;
 
 namespace GigHub.Models
 {
@@ -20,10 +18,13 @@ namespace GigHub.Models
         public ICollection<Follow> Followers { get; set; }
         public ICollection<Follow> Followees { get; set; }
 
+        public ICollection<UserNotification> UserNotifications { get; set; }
+
         public ApplicationUser()
         {
             Followers = new Collection<Follow>();
             Followees = new Collection<Follow>();
+            UserNotifications = new Collection<UserNotification>();
         }
 
         public async Task<ClaimsIdentity> GenerateUserIdentityAsync(UserManager<ApplicationUser> manager)
@@ -32,6 +33,11 @@ namespace GigHub.Models
             var userIdentity = await manager.CreateIdentityAsync(this, DefaultAuthenticationTypes.ApplicationCookie);
             // Add custom user claims here
             return userIdentity;
+        }
+
+        public void Notify(Notification notification)
+        {
+            UserNotifications.Add(new UserNotification(this, notification));
         }
     }
 
