@@ -1,0 +1,12 @@
+﻿@model GigHub.ViewModels.GigDetailsViewModel
+
+@{
+    ViewBag.Title = "title";
+}
+
+<h2>@Model.Heading</h2>
+<p>Performing at @Model.Venue on @Model.GetDate() at @Model.GetTime()</p>
+@if (Model.IsAttending)
+{
+    <p>You are going to this event.</p>
+}

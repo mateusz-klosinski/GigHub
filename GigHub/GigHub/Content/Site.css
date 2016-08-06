@@ -107,6 +107,10 @@ h6,
   height: 44px;
   -ms-border-radius: 9px;
   border-radius: 9px;
+  box-shadow: none;
+  -webkit-box-shadow: none;
+  transition: none;
+  -webkit-transition: none;
 }
 .form-control:focus {
   border-color: #2196F3;
@@ -163,7 +167,7 @@ h6,
   font-size: 15px;
   display: none;
 }
-.gigs > li:hover {
+.gigs > li:hover .actions {
   display: block;
 }
 .popover-notifications .popover-content {
@@ -182,4 +186,7 @@ h6,
 }
 .popover-notifications ul.notifications .highlight {
   font-weight: bold;
+}
+#searchGigs {
+  width: 300px;
 }

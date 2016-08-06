@@ -1,0 +1,29 @@
+﻿using System;
+
+namespace GigHub.ViewModels
+{
+    public class GigDetailsViewModel
+    {
+        public bool Actions { get; set; }
+
+        public bool IsAttending { get; set; }
+
+        public string Heading { get; set; }
+
+        public string Venue { get; set; }
+
+        public DateTime DateTime { get; set; }
+
+
+        public string GetDate()
+        {
+            return DateTime.ToString("dd MMM");
+        }
+
+        public string GetTime()
+        {
+            return DateTime.ToString("HH:mm");
+        }
+
+    }
+}
