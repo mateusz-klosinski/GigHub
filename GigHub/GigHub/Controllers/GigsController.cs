@@ -1,4 +1,5 @@
 ﻿using GigHub.Models;
+using GigHub.Repositories;
 using GigHub.ViewModels;
 using Microsoft.AspNet.Identity;
 using System;
@@ -11,10 +12,14 @@ namespace GigHub.Controllers
     public class GigsController : Controller
     {
         private readonly ApplicationDbContext _context;
+        private AttendanceRepository _attendanceRepository;
+        private GigRepository _gigsRepository;
 
         public GigsController()
         {
             _context = new ApplicationDbContext();
+            _attendanceRepository = new AttendanceRepository(_context);
+            _gigsRepository = new GigRepository(_context);
         }
 
         [Authorize]
@@ -50,22 +55,17 @@ namespace GigHub.Controllers
         {
             var userId = User.Identity.GetUserId();
 
-            var gigs = _context.Attendances
-                .Where(a => a.AttendeeId == userId)
-                .Select(a => a.Gig)
-                .Include(g => g.Artist)
-                .Include(g => g.Genre)
-                .ToList();
-
             var viewModel = new GigsViewModel()
             {
-                UpcomingGigs = gigs,
+                UpcomingGigs = _gigsRepository.GetGigsUserAttending(userId),
                 ShowActions = User.Identity.IsAuthenticated,
                 Heading = "Gigs I'm Attending",
+                Attendances = _attendanceRepository.GetFutureAttendances(userId).ToLookup(a => a.GigId),
             };
 
             return View("Gigs", viewModel);
         }
+
 
         [Authorize]
         public ActionResult Create()
@@ -164,15 +164,19 @@ namespace GigHub.Controllers
             var gig = _context.Gigs
                 .Include(g => g.Attendances)
                 .Include(g => g.Artist)
+                .Include(g => g.Artist.Followers)
                 .Single(g => g.Id == id);
+
+            var isArtistFollowed = _context.Follows.Any(f => f.FollowerId == userId && gig.ArtistId == f.ArtistId);
 
 
             var detailsViewModel = new GigDetailsViewModel
             {
                 Actions = User.Identity.IsAuthenticated,
-                DateTime = gig.DateTime,
-                Heading = gig.Artist.Name,
                 IsAttending = gig.Attendances.Any(a => a.AttendeeId == userId),
+                IsArtistFollowed = isArtistFollowed,
+                DateTime = gig.DateTime,
+                ArtistName = gig.Artist.Name,
                 Venue = gig.Venue
             };
 

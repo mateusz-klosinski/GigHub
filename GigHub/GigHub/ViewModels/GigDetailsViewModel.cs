@@ -8,7 +8,9 @@ namespace GigHub.ViewModels
 
         public bool IsAttending { get; set; }
 
-        public string Heading { get; set; }
+        public bool IsArtistFollowed { get; set; }
+
+        public string ArtistName { get; set; }
 
         public string Venue { get; set; }
 

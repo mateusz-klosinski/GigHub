@@ -1,12 +1,37 @@
 ﻿@model GigHub.ViewModels.GigDetailsViewModel
 
 @{
-    ViewBag.Title = "title";
+    ViewBag.Title = @Model.ArtistName;
 }
 
-<h2>@Model.Heading</h2>
+<h2>
+    @Model.ArtistName
+    @if (Model.Actions)
+    {
+        if (Model.IsArtistFollowed)
+        {
+            <button data-artist-name="@Model.ArtistName" class="btn btn-info btn-lg js-toggle-follow">Following</button>
+        }
+        else
+        {
+            <button data-artist-name="@Model.ArtistName" class="btn btn-default btn-lg js-toggle-follow">Follow?</button>
+        }
+    }
+</h2>
+
 <p>Performing at @Model.Venue on @Model.GetDate() at @Model.GetTime()</p>
+
 @if (Model.IsAttending)
 {
     <p>You are going to this event.</p>
+}
+
+@section scripts
+{
+    <script>
+        $(document)
+            .ready(function () {
+                FollowsController.init();
+            });
+    </script>
 }
