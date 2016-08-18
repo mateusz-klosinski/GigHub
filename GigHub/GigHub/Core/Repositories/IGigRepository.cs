@@ -1,6 +1,6 @@
-﻿using System.Collections.Generic;
-using GigHub.Core.Models;
+﻿using GigHub.Core.Models;
 using GigHub.Core.ViewModels;
+using System.Collections.Generic;
 
 namespace GigHub.Core.Repositories
 {
@@ -11,6 +11,7 @@ namespace GigHub.Core.Repositories
         IEnumerable<Gig> GetUsersGigs(string userId);
         Gig GetGigById(int id, string userId);
         Gig GetGigByIdWithAttendancesWithArtistAndArtistFollowers(int id);
+        IEnumerable<Gig> GetUpcomingGigs();
         void AddGig(Gig gig);
         void ModifyGig(GigFormViewModel viewModel, Gig gig);
     }

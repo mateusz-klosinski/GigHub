@@ -1,10 +1,10 @@
-﻿using System;
+﻿using GigHub.Core.Models;
+using GigHub.Core.Repositories;
+using GigHub.Core.ViewModels;
+using System;
 using System.Collections.Generic;
 using System.Data.Entity;
 using System.Linq;
-using GigHub.Core.Models;
-using GigHub.Core.Repositories;
-using GigHub.Core.ViewModels;
 
 namespace GigHub.Persistance.Repositories
 {
@@ -58,6 +58,14 @@ namespace GigHub.Persistance.Repositories
                 .Include(g => g.Artist)
                 .Include(g => g.Artist.Followers)
                 .Single(g => g.Id == id);
+        }
+
+        public IEnumerable<Gig> GetUpcomingGigs()
+        {
+            return _context.Gigs
+                .Include(g => g.Artist)
+                .Include(g => g.Genre)
+                .Where(g => g.DateTime > DateTime.Now && !g.IsCancelled);
         }
 
         public void AddGig(Gig gig)
