@@ -2,7 +2,6 @@
 using GigHub.Core;
 using GigHub.Core.Dtos;
 using GigHub.Core.Models;
-using GigHub.Persistance;
 using Microsoft.AspNet.Identity;
 using System.Collections.Generic;
 using System.Linq;
@@ -13,11 +12,9 @@ namespace GigHub.Controllers.API
     [Authorize]
     public class NotificationsController : ApiController
     {
-        private IUnitOfWork _unitOfWork;
+        private readonly IUnitOfWork _unitOfWork;
 
-        private ApplicationDbContext _context;
-
-        private NotificationsController(IUnitOfWork unitOfWork)
+        public NotificationsController(IUnitOfWork unitOfWork)
         {
             _unitOfWork = unitOfWork;
         }
@@ -48,7 +45,7 @@ namespace GigHub.Controllers.API
                 notification.Read();
             }
 
-            _context.SaveChanges();
+            _unitOfWork.Complete();
 
             return Ok();
         }
