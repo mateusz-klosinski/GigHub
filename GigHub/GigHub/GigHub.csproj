@@ -283,6 +283,13 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Persistance\EntityConfigurations\ApplicationUserConfiguration.cs" />
+    <Compile Include="Persistance\EntityConfigurations\AttendanceConfiguration.cs" />
+    <Compile Include="Persistance\EntityConfigurations\FollowConfiguration.cs" />
+    <Compile Include="Persistance\EntityConfigurations\GenreConfiguration.cs" />
+    <Compile Include="Persistance\EntityConfigurations\GigConfiguration.cs" />
+    <Compile Include="Persistance\EntityConfigurations\NotificationConfiguration.cs" />
+    <Compile Include="Persistance\EntityConfigurations\UserNotificationConfiguration.cs" />
     <Compile Include="Persistance\Migrations\201607081943478_CreateGigTable.cs" />
     <Compile Include="Persistance\Migrations\201607081943478_CreateGigTable.Designer.cs">
       <DependentUpon>201607081943478_CreateGigTable.cs</DependentUpon>
