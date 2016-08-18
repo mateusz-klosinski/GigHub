@@ -12,6 +12,9 @@ namespace GigHub.Persistance
         public IAttendanceRepository Attendances { get; private set; }
         public IUserRepository Users { get; private set; }
         public IGenreRepository Genres { get; private set; }
+        public INotificationRepository Notifications { get; private set; }
+        public IUserNotificationRepository UserNotifications { get; private set; }
+        public IFollowRepository Follows { get; private set; }
 
         public UnitOfWork(ApplicationDbContext context)
         {

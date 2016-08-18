@@ -1,5 +1,5 @@
-﻿using System.Collections.Generic;
-using GigHub.Core.Models;
+﻿using GigHub.Core.Models;
+using System.Collections.Generic;
 
 namespace GigHub.Core.Repositories
 {
@@ -7,5 +7,6 @@ namespace GigHub.Core.Repositories
     {
         IEnumerable<ApplicationUser> GetArtistsFollowedByUser(string userId);
         bool CheckIfArtistIsFollowed(string userId, Gig gig);
+        string GetUserIdByName(string name);
     }
 }

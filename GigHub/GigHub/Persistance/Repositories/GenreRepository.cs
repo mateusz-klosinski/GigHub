@@ -1,7 +1,7 @@
-﻿using System.Collections.Generic;
-using System.Linq;
-using GigHub.Core.Models;
+﻿using GigHub.Core.Models;
 using GigHub.Core.Repositories;
+using System.Collections.Generic;
+using System.Linq;
 
 namespace GigHub.Persistance.Repositories
 {
@@ -9,9 +9,9 @@ namespace GigHub.Persistance.Repositories
     {
         private ApplicationDbContext _context;
 
-        public GenreRepository(ApplicationDbContext _context)
+        public GenreRepository(ApplicationDbContext context)
         {
-            this._context = _context;
+            this._context = context;
         }
 
         public IEnumerable<Genre> GetAllGenres()

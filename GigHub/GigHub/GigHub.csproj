@@ -262,8 +262,11 @@
     <Compile Include="Core\Models\NotificationType.cs" />
     <Compile Include="Core\Models\UserNotification.cs" />
     <Compile Include="Core\Repositories\IAttendanceRepository.cs" />
+    <Compile Include="Core\Repositories\IFollowRepository.cs" />
     <Compile Include="Core\Repositories\IGenreRepository.cs" />
     <Compile Include="Core\Repositories\IGigRepository.cs" />
+    <Compile Include="Core\Repositories\INotificationRepository.cs" />
+    <Compile Include="Core\Repositories\IUserNotificationRepository.cs" />
     <Compile Include="Core\Repositories\IUserRepository.cs" />
     <Compile Include="Core\ViewModels\ExternalLoginConfirmationViewModel.cs" />
     <Compile Include="Core\ViewModels\ExternalLoginListViewModel.cs" />
@@ -342,11 +345,18 @@
     <Compile Include="Persistance\Migrations\201607172000500_AddNotification.Designer.cs">
       <DependentUpon>201607172000500_AddNotification.cs</DependentUpon>
     </Compile>
+    <Compile Include="Persistance\Migrations\201608181736496_ChangedDataAnnotationsToFluentAPI.cs" />
+    <Compile Include="Persistance\Migrations\201608181736496_ChangedDataAnnotationsToFluentAPI.Designer.cs">
+      <DependentUpon>201608181736496_ChangedDataAnnotationsToFluentAPI.cs</DependentUpon>
+    </Compile>
     <Compile Include="Persistance\Migrations\Configuration.cs" />
     <Compile Include="Persistance\ApplicationDbContext.cs" />
     <Compile Include="Persistance\Repositories\AttendanceRepository.cs" />
+    <Compile Include="Persistance\Repositories\FollowRepository.cs" />
     <Compile Include="Persistance\Repositories\GenreRepository.cs" />
     <Compile Include="Persistance\Repositories\GigRepository.cs" />
+    <Compile Include="Persistance\Repositories\NotificationRepository.cs" />
+    <Compile Include="Persistance\Repositories\UserNotificationRepository.cs" />
     <Compile Include="Persistance\Repositories\UserRepository.cs" />
     <Compile Include="Persistance\UnitOfWork.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -486,6 +496,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Persistance\Migrations\201607172000500_AddNotification.resx">
       <DependentUpon>201607172000500_AddNotification.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Persistance\Migrations\201608181736496_ChangedDataAnnotationsToFluentAPI.resx">
+      <DependentUpon>201608181736496_ChangedDataAnnotationsToFluentAPI.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
