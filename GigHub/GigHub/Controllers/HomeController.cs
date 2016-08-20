@@ -23,8 +23,7 @@ namespace GigHub.Controllers
             {
                 upcomingGigs = upcomingGigs
                     .Where(g => g.Artist.Name.Contains(query) ||
-                                g.Genre.Name.Contains(query) ||
-                                g.Venue.Contains(query));
+                                g.Genre.Name.Contains(query));
             }
 
             string userId = User.Identity.GetUserId();
