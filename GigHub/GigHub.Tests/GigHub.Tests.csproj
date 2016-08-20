@@ -80,6 +80,7 @@
   </Choose>
   <ItemGroup>
     <Compile Include="Controllers\API\GigsControllerTest.cs" />
+    <Compile Include="Controllers\API\AttendancesControllerTest.cs" />
     <Compile Include="Extensions\ApiControllerExtensions.cs" />
     <Compile Include="UnitTest1.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

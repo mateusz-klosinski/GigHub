@@ -43,12 +43,14 @@ namespace GigHub.Controllers.API
         {
             var userId = User.Identity.GetUserId();
 
-            if (_unitOfWork.Attendances.GetAttendanceById(userId, id) == null)
+            var attendance = _unitOfWork.Attendances.GetAttendanceById(userId, id);
+
+
+            if (attendance == null)
             {
                 return BadRequest("Attendance does not exist.");
             }
 
-            var attendance = _unitOfWork.Attendances.GetAttendanceById(userId, id);
 
             _unitOfWork.Attendances.RemoveAttendance(attendance);
             _unitOfWork.Complete();
